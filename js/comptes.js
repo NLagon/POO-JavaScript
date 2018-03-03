@@ -1,5 +1,5 @@
 // TODO : ajoutez ici la définition des objets nécessaires
-var Compte = {
+var CompteBancaire = {
 
     nom: "",
     somme: 0,
@@ -19,34 +19,25 @@ var Compte = {
 
     debiter: function (montant) {
 
-        this.somme -= montant;
+        this.somme = this.somme - montant;
 
     },
 
     crediter: function (montant) {
 
-        this.somme += montant;
+        this.somme = this.somme + montant;
 
     }
 };
 
-var CompteBancaire = Object.create(Compte);
-
-CompteBancaire.initCB = function (nom, somme) {
-
-    this.nom = nom;
-    this.somme = somme;
-
-};
 
 
 
-var CompteEpargne = Object.create(Compte);
+var CompteEpargne = Object.create(CompteBancaire);
 
 CompteEpargne.initCE = function (nom, somme, taux) {
 
-    this.nom = nom;
-    this.somme = somme;
+    this.init(nom, somme);
     this.taux = taux;
 
 };
@@ -59,7 +50,7 @@ CompteEpargne.ajouterInterets = function () {
 
 var compte1 = Object.create(CompteBancaire);
 
-compte1.initCB("Alex", 100);
+compte1.init("Alex", 100);
 
 var compte2 = Object.create(CompteEpargne);
 
