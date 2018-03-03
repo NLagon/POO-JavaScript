@@ -31,8 +31,7 @@ var Personnage = { // Définition de l'objet
 
 };
 
-var Joueur = Object.create(Personnage); // création d'un objet Joueur
-// héritant des propriétés de Peronnage
+var Joueur = Object.create(Personnage); // création d'un objet Joueur par le biais du prototype Personnage
 
 Joueur.initJoueur = function (nom, sante, force) { // Création d'une méthode 
     // pour cet objet Joueur
