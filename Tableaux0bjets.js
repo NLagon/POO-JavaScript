@@ -3,7 +3,7 @@ var Film = {
     nom: "",
     annee: 0,
 
-    init: function (nom, anneee) {
+    init: function (nom, aneee) {
 
         this.nom = nom;
         this.annee = annee;
