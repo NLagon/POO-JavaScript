@@ -17,18 +17,22 @@ var Compte = {
     },
 
 
-    débiter: function (montant) {
+    debiter: function (montant) {
 
-        this.somme += montant;
+        this.somme -= montant;
 
     },
 
-    créditer: function ()
+    crediter: function (montant) {
+
+        this.somme += montant;
+
+    }
 };
 
 var CompteBancaire = Object.create(Compte);
 
-CompteBancaire.initBancaire = function (nom, somme) {
+CompteBancaire.initCB = function (nom, somme) {
 
     this.nom = nom;
     this.somme = somme;
@@ -39,13 +43,18 @@ CompteBancaire.initBancaire = function (nom, somme) {
 
 var CompteEpargne = Object.create(Compte);
 
-CompteBancaire.initBancaire = function (nom, somme, taux) {
+CompteEpargne.initCE = function (nom, somme, taux) {
 
     this.nom = nom;
     this.somme = somme;
     this.taux = taux;
 
 };
+
+CompteEpargne.ajouterInterets = function () {
+
+    this.somme += this.taux;
+}
 
 
 var compte1 = Object.create(CompteBancaire);
